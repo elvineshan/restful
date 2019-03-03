@@ -1,0 +1,50 @@
+/* 
+Project Name: Restful
+Author: Eshan Mohabeer
+*/
+
+/******************************************
+/* SENSIBLE DEFAULTS                   
+/*******************************************/
+
+* {
+     box-sizing: border-box;
+}
+img {
+	max-width:100%;
+}
+
+/******************************************
+/* LAYOUT                   
+/*******************************************/
+
+.site-container {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+/******************************************
+/* HELPER CLASSES
+/*******************************************/
+
+/* Clearfix */
+.clearfix:before,
+.clearfix:after {
+     content: " ";
+     display: table;
+}
+.clearfix:after {
+     clear:both;
+}
+
+.is-hidden {
+     display: none;
+}
+.is-visible {
+     display: block;
+}
+
+/******************************************
+/* ADDITIONAL STYLES                   
+/*******************************************/
+
