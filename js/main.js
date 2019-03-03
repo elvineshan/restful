@@ -13,47 +13,52 @@ function startPhotos() {
 	document.getElementById("nextbutton").style.visibility="visible"; //'next' button appears once program starts
 	document.getElementById("startbutton").innerHTML="Reset"; //'start' button becomes 'reset' button once program starts
 	pagenumber = 1; //sets page number back to 1 for reset purposes
-	showPhotos();
-	updatePage();
+	showPhotos(); //pull data from the API - see showPhotos function below
+	updatePageNumber();
 }
 
 function nextPhotos() {
-  pagenumber = pagenumber + 1;
+  pagenumber = pagenumber + 1; //increment the page number
   console.log(pagenumber);
-  updatePage();
+  showPhotos(); //pull data from the API - see showPhotos function below
+  updatePageNumber();
 }
 
 function previousPhotos() {
-  pagenumber = pagenumber - 1;
-  zeroCheck();
+  pagenumber = pagenumber - 1; //decrement the page number
+  zeroCheck(); //perform a zero check - see zeroCheck function below
   console.log(pagenumber);
-  updatePage();
+  showPhotos(); //pull data from the API - see showPhotos function below
+  updatePageNumber();
 }
 
+//Ensure that the page number is never set to anything less than 1. This eliminates negative page numbers.
 function zeroCheck() {
   if (pagenumber < 2) {
     pagenumber = 1;
   }
 }
 
+//Pull the photos data from the API when this function is called
 function showPhotos() {
-	//Pull the photos data from the API
-	fetch('https://jsonplaceholder.typicode.com/photos')
+	//Use the '_page' param to fetch photos by page. Dynamically change the page fetched using the current value of the pagenumber variable
+	//Use the '_limit' param to override the default number of photos returned per page (set to 12 in this case)
+	fetch('https://jsonplaceholder.typicode.com/photos?_page=' + pagenumber + '&_limit=12')
 	.then(response => response.json())
 	.then(json => {
 		//generate the correct <img> tags to load each photo from the JSON photos array
-	 	//first create an empty variable
-		var images = '';
-		for( var i=0; i<12; ++i ) {
+		var images = ''; //first create an empty images variable
+		for( var i=0; i<json.length; ++i ) {
 			//use the thumbnail URL pulled from JSON to generate the <img> tag, for each instance in the array
 	  		//store the result in the images variable
 			images += '<img src="' + json[i].thumbnailUrl + '" />';
 		}
-	  	//populate the photoContainer element with the resultant images variable, that is, the photo returned from JSON		
+	  	//populate the photoContainer element with the resultant images variable, that is, the photo from the generated <img> tag
 		document.getElementById("photoContainer").innerHTML = images;
 	})
 }
 
-function updatePage() {
+//Update the pagination element to show the current page number
+function updatePageNumber() {
 	document.getElementById("pagination").innerHTML = "Page " + pagenumber;
 }

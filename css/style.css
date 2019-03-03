@@ -48,6 +48,7 @@ img {
 /* ADDITIONAL STYLES                   
 /*******************************************/
 
+/* Hide the navigation buttons at the start of the program */
 #previousbutton,#nextbutton{
 	visibility: hidden;
 }
