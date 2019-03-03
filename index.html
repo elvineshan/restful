@@ -5,18 +5,29 @@
     	<meta name="description" content=" A demo app that pulls and displays data from the JSONPlaceholder REST API">
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 		<title>RESTful App</title>
+		<!-- Load necessary stylesheets -->
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/main.css">
 	</head>
 	<body>
 		<div class="site-container">
-			<header class="site-header">
-				<h1></h1>
-			</header>
-			<main class="site-content">
 
+			<header class="site-header">
+				<h1>RESTful App Coding Challenge</h1>
+			</header>
+
+			<main class="site-content">
+				<!-- Create a container which will be populated with the photos data from JSON -->
+				<div id="photoContainer"></div>
 			</main>
+
+			<footer>
+				<h6>Created by Eshan Mohabeer</h6>
+			</footer>
+
 		</div><!-- .site-container -->
+
+		<!-- Load JavaScript from external file -->
 		<script src="js/main.js"></script>
 	</body>
 </html>
