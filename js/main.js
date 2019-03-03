@@ -1,4 +1,40 @@
-document.getElementById("startbutton").addEventListener("click", showPhotos);
+document.getElementById("startbutton").addEventListener("click", startPhotos);
+
+document.getElementById("nextbutton").addEventListener("click", nextPhotos);
+
+document.getElementById("previousbutton").addEventListener("click", previousPhotos);
+
+//At beginning of program, globally set the page number to 1, for pagination purposes
+var pagenumber = 1;
+
+//Initialise the program by clicking the start button. Also serves as reset button afterwards
+function startPhotos() {
+	document.getElementById("previousbutton").style.visibility="visible"; //'previous' button appears once program starts
+	document.getElementById("nextbutton").style.visibility="visible"; //'next' button appears once program starts
+	document.getElementById("startbutton").innerHTML="Reset"; //'start' button becomes 'reset' button once program starts
+	pagenumber = 1; //sets page number back to 1 for reset purposes
+	showPhotos();
+	updatePage();
+}
+
+function nextPhotos() {
+  pagenumber = pagenumber + 1;
+  console.log(pagenumber);
+  updatePage();
+}
+
+function previousPhotos() {
+  pagenumber = pagenumber - 1;
+  zeroCheck();
+  console.log(pagenumber);
+  updatePage();
+}
+
+function zeroCheck() {
+  if (pagenumber < 2) {
+    pagenumber = 1;
+  }
+}
 
 function showPhotos() {
 	//Pull the photos data from the API
@@ -16,4 +52,8 @@ function showPhotos() {
 	  	//populate the photoContainer element with the resultant images variable, that is, the photo returned from JSON		
 		document.getElementById("photoContainer").innerHTML = images;
 	})
+}
+
+function updatePage() {
+	document.getElementById("pagination").innerHTML = "Page " + pagenumber;
 }

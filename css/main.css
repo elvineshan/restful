@@ -48,3 +48,6 @@ img {
 /* ADDITIONAL STYLES                   
 /*******************************************/
 
+#previousbutton,#nextbutton{
+	visibility: hidden;
+}
