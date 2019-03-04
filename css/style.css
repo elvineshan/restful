@@ -9,10 +9,7 @@ Author: Eshan Mohabeer
 
 * {
      box-sizing: border-box;
-}
-img {
-	max-width:100%;
-}
+ }
 
 /******************************************
 /* LAYOUT                   
@@ -24,31 +21,28 @@ img {
 }
 
 /******************************************
-/* HELPER CLASSES
-/*******************************************/
-
-/* Clearfix */
-.clearfix:before,
-.clearfix:after {
-     content: " ";
-     display: table;
-}
-.clearfix:after {
-     clear:both;
-}
-
-.is-hidden {
-     display: none;
-}
-.is-visible {
-     display: block;
-}
-
-/******************************************
 /* ADDITIONAL STYLES                   
 /*******************************************/
 
 /* Hide the navigation buttons at the start of the program */
 #previousbutton,#nextbutton{
 	visibility: hidden;
+}
+
+/* The 'item-container' div is created dynamically by the JavaScript.
+The below CSS styles this, as well as its containing elements, to all align correctly on the page */
+#item-container{
+	display: inline-block;
+	margin: 20px;
+}
+
+img,p{
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+}
+
+p{
+	width:  150px;
+	text-align: center;
 }
