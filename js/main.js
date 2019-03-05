@@ -12,6 +12,7 @@ function startPhotos() {
 	document.getElementById("previousbutton").style.visibility="visible"; //'previous' button appears once program starts
 	document.getElementById("nextbutton").style.visibility="visible"; //'next' button appears once program starts
 	document.getElementById("startbutton").innerHTML="Reset"; //'start' button becomes 'reset' button once program starts
+	document.getElementById("startbutton").style.backgroundColor="#1D1F1F"; //change 'reset' button colour
 	pagenumber = 1; //sets page number back to 1 for reset purposes
 	showPhotos(); //pull data from the API - see showPhotos function later below
 	updatePageNumber(); //update pagination info
@@ -44,7 +45,7 @@ function zeroCheck() {
 //Pull the required photos data from the API when this function is called
 function showPhotos() {
 	//Use the '_page' param to fetch photos by page. Dynamically change the page fetched using the current value of the pagenumber variable
-	//Use the '_limit' param to override the default number of photos returned per page (set to 10 in this case)
+	//Use the '_limit' param to override the default number of photos returned per page (set to 10 in this case, which is also the default)
 	fetch('https://jsonplaceholder.typicode.com/photos?_page=' + pagenumber + '&_limit=10')
 	.then(response => response.json())
 	.then(json => {

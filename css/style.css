@@ -15,25 +15,91 @@ Author: Eshan Mohabeer
 /* LAYOUT                   
 /*******************************************/
 
+body{
+	font-family: 'Yantramanav', sans-serif;
+	background-color: #6E879A;
+}
+
 .site-container {
 	max-width: 960px;
 	margin: 0 auto;
+	background-color: #fff;
 }
 
 /******************************************
 /* ADDITIONAL STYLES                   
 /*******************************************/
 
+header{
+	background-color: #000;
+	color: #fff
+}
+
+h1{
+	font-family: 'Changa', sans-serif;
+	padding: 20px;
+}
+
+/* style pagination info*/
+#pagination{
+	padding: 20px;
+	text-align: center;
+	font-size: 10pt;
+}
+
+/* Center the buttons */
+#startbutton{
+	margin: auto;
+	display: block;
+	animation: fadein 1.5s;
+}
+
+#navigation-wrapper{
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+}
+
 /* Hide the navigation buttons at the start of the program */
 #previousbutton,#nextbutton{
 	visibility: hidden;
 }
 
+/* Style the buttons */
+
+.button{
+	font-family: 'Changa', sans-serif;
+	width: 100px;
+	margin: 5px;
+	border-radius: 10px;
+	padding: 10px;
+	outline: none;
+	background-color: #303AC3;
+	border: none;
+	color: #fff;
+	font-weight: bold;
+	transition: opacity 0.3s;
+}
+
+.button:hover{
+	opacity: 0.8;
+}
+
+.button:active{
+	background-color: #727172;
+}
+
+#navigation-wrapper .button{
+	font-size: 0.8em;
+	width: 90px;
+}
+
 /* The 'item-container' div is created dynamically by the JavaScript.
-The below CSS styles this, as well as its containing elements, to all align correctly on the page */
+The below CSS styles this, as well as its containing elements, such that they all align correctly on the page */
 #item-container{
 	display: inline-block;
 	margin: 20px;
+	animation: fadein 0.8s;
 }
 
 img,p{
@@ -45,4 +111,23 @@ img,p{
 p{
 	width:  150px;
 	text-align: center;
+}
+
+/* Style the page footer*/
+
+footer{
+	background-color: #5A5B5F;
+	color: #fff;
+}
+
+footer h5{
+	font-family: 'Changa', sans-serif;
+	padding: 10px 20px;
+	text-align: center;
+}
+
+/* Animation */
+@keyframes fadein {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
 }

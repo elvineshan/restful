@@ -8,6 +8,8 @@
 		<!-- Load necessary stylesheets -->
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/style.css">
+		<!-- Load fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Changa|Yantramanav" rel="stylesheet">
 	</head>
 	<body>
 		<div class="site-container">
@@ -17,19 +19,21 @@
 			</header>
 
 			<main class="site-content">
-				<!-- Start/Reset button -->
-				<button id="startbutton">Start</button>
-				<!-- Previous and Next buttons -->
-				<button id="previousbutton">Previous</button>
-				<button id="nextbutton">Next</button>
-				<!-- Container which will be populated with the photos data from JSON -->
-				<div id="photo-container"></div>
 				<!-- Pagination info -->
 				<h3 id="pagination"></h3>
+				<!-- Start/Reset button -->
+				<button id="startbutton" class="button">Start</button>
+				<!-- Previous and Next buttons -->
+				<div id="navigation-wrapper">
+					<button id="previousbutton" class="button">Previous</button>
+					<button id="nextbutton" class="button">Next</button>
+				</div>
+				<!-- Container which will be populated with the photos data from JSON -->
+				<div id="photo-container"></div>
 			</main>
 
 			<footer>
-				<h6>Created by Eshan Mohabeer</h6>
+				<h5>Created by Eshan Mohabeer</h5>
 			</footer>
 
 		</div><!-- .site-container -->
